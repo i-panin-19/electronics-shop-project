@@ -3,6 +3,12 @@ from src.item import Item
 
 obj1 = Item('Шоколад', 89.95, 20)
 
+def test___repr__():
+    assert repr(obj1) == "Item('Шоколад', 89.95, 20)"
+
+def test___str__():
+    assert str(obj1) == 'Шоколад'
+
 def test_calculate_total_price():
     assert obj1.calculate_total_price() == 1799.0
 
