@@ -1,3 +1,5 @@
+import pytest
+
 from src.phone import Phone
 
 obj2 = Phone("iPhone 14", 120_000, 5, 2)
@@ -25,6 +27,7 @@ def test_name():
 def test_number_of_sim():
     obj2.number_of_sim = 1
     assert obj2.number_of_sim == 1
-    obj2.number_of_sim = -1
-    assert obj2.number_of_sim == 1
+
+    with pytest.raises(ValueError):
+        obj2.number_of_sim = 0
 

@@ -1,6 +1,7 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 from src.item import Item
 from src.phone import Phone
+import pytest
 
 obj1 = Item('Шоколад', 89.95, 20)
 
@@ -25,8 +26,9 @@ def test_apply_discount():
     assert obj1.price == 89.95
 
 def test_name():
-    obj1.name = 'СуперпуперШоколад'
-    assert obj1.name == 'Шоколад'
+    with pytest.raises(Exception):
+        obj1.name = 'СуперпуперШоколад'
+
     obj1.name = 'Шоколадко'
     assert obj1.name == 'Шоколадко'
 

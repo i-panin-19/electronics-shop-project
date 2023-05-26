@@ -28,6 +28,6 @@ class Phone(Item):
         '''
         # проверка количества сим карт
         if number_of_sim <= 0:
-            print('ValueError: Количество физических SIM-карт должно быть целым числом больше нуля.')
+            raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
         else:
             self.__number_of_sim = number_of_sim
